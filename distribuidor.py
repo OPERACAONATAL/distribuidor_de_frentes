@@ -46,9 +46,7 @@ for team in teams:
     team_times_sum = team_times_sum.reindex(columns=team_times.columns)
     team_times = team_times.append(team_times_sum, ignore_index=True)
 
-    # team_times = team_times.dropna(axis=1, how='all')
-    if("Programação" == team):
-        print(team_times)
+    team_times = team_times.dropna(axis=1, how='all')
     team_times.to_csv(f"{team}.csv", index=False)
     
 df.to_csv('new_answers.csv', index=False)
